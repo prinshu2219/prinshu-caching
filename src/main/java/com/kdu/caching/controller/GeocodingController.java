@@ -28,7 +28,7 @@ class GeocodingController {
         return ResponseEntity.ok(geocodingService.getCoordinates(address));
     }
 
-    @GetMapping("geocoding/hello")
+    @GetMapping("geocoding/helloDuniya")
     public ResponseEntity<Map<String, Double>> forwardGeocodingHello(@RequestParam String address) {
         return ResponseEntity.ok(geocodingService.getCoordinates(address));
     }
