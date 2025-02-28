@@ -33,6 +33,11 @@ class GeocodingController {
         return ResponseEntity.ok(geocodingService.getCoordinates(address));
     }
 
+    @GetMapping("geocoding/helloindia")
+    public ResponseEntity<Map<String, Double>> forwardGeocodingHelloindia(@RequestParam String address) {
+        return ResponseEntity.ok(geocodingService.getCoordinates(address));
+    }
+
     // To get Address from Latitude and Longitude
     @GetMapping("reverse-geocoding")
     public ResponseEntity<String> reverseGeocoding(@RequestParam double latitude, @RequestParam double longitude) {
@@ -44,6 +49,8 @@ class GeocodingController {
     public ResponseEntity<String> reverseGeocodingHello(@RequestParam double latitude, @RequestParam double longitude) {
         return ResponseEntity.ok(geocodingService.getAddress(latitude, longitude));
     }
+
+
 
     // Delete from Cache
     @DeleteMapping("cache")
